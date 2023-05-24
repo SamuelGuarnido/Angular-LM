@@ -1,0 +1,24 @@
+<p>ejercicio004 works!</p>
+<div class="container mt-2 shadow-lg rounded p-2">
+  <h2>Angular -JSON-SERVER (CRUD)</h2>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Descripcion</th>
+        <th>Precio</th>
+        <th>Borrar</th>
+        <th>Seleccionar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let fr of frutas">
+        <th>{{fr.id}}</th>
+        <th>{{fr.descripcion}}</th>
+        <th>{{fr.precio}}</th>
+        <th><button (click)="baja(fr)" class="btn btn-danger">Borrar</button></th>
+        <th><button (click)="seleccionar(fr)" class="btn btn-info">Seleccionar</button></th>
+      </tr>
+    </tbody>
+  </table>
+</div>
