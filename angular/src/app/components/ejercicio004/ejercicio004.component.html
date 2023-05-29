@@ -1,3 +1,5 @@
+<p>ejercicio004 works!</p>
+
 <div class="container mt-2 shadow-lg rounded p-2">
   <h2>Angular - JSON-SERVER (CRUD)</h2>
   <table class="table table-striped">
@@ -26,14 +28,22 @@
   <h2>Agregar Fruta</h2>
   <form (submit)="agregarFruta()">
     <label>
-      Descripción:
+      Id:<br>
+      <input type="number" [(ngModel)]="fruta.id" name="id" required>
+    </label>
+    <br>
+    <label>
+      Descripción:<br>
       <input type="text" [(ngModel)]="fruta.descripcion" name="descripcion" required>
     </label>
+    <br>
     <label>
-      Precio:
+      Precio:<br>
       <input type="number" [(ngModel)]="fruta.precio" name="precio" required>
     </label>
-    <button type="submit" class="btn btn-info" style = "margin-left: 10px;">Agregar</button>
+    <br>
+    <br>
+    <button type="submit" class="btn btn-info">Agregar</button>
   </form>
 </div>
 
@@ -48,11 +58,11 @@
     </label>
     <label>
       Nueva descripción:
-      <input type="text" [(ngModel)]="fruta.descripcion" name="nuevaDescripcion" required>
+      <input type="text" [(ngModel)]="frutaSeleccionada.descripcion" name="nuevaDescripcion" required>
     </label>
     <label>
       Nuevo precio:
-      <input type="number" [(ngModel)]="fruta.precio" name="nuevoPrecio" required>
+      <input type="number" [(ngModel)]="frutaSeleccionada.precio" name="nuevoPrecio" required>
     </label>
     <button type="submit" class="btn btn-info">Modificar</button>
   </form>
