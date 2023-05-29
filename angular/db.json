@@ -61,9 +61,29 @@
       "precio": 35
     },
     {
-      "id": 3,
-      "descripcion": "Platanos",
-      "precio": 40
+      "id": 33,
+      "descripcion": "Alonso wins",
+      "precio": 33
+    }
+  ],
+  "usuarios": [
+    {
+      "id": 1,
+      "nombre": "Marta",
+      "apellidos": "Lopez",
+      "email": "marta@gmail.com",
+      "phone": "454545",
+      "password": "lopez",
+      "image": "https://robohash.org/Marta"
+    },
+    {
+      "id": 2,
+      "nombre": "Manolo",
+      "apellidos": "Garcia",
+      "email": "manolo@gmail.com",
+      "phone": "344523",
+      "password": "garcia",
+      "image": "https://robohash.org/Manolo"
     }
   ]
 }

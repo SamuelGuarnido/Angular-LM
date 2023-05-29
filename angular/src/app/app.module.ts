@@ -12,6 +12,8 @@ import { Ejercicio004Component } from './components/ejercicio004/ejercicio004.co
 import { HeaderComponent } from './components/header/header.component';
 import { DetalleComponent } from './components/detalle/detalle.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { FormsModule } from '@angular/forms';
     Ejercicio003Component,
     Ejercicio004Component,
     HeaderComponent,
-    DetalleComponent
+    DetalleComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,8 @@ import { Ejercicio002Component } from './components/ejercicio002/ejercicio002.co
 import { Ejercicio003Component } from './components/ejercicio003/ejercicio003.component';
 import { Ejercicio004Component } from './components/ejercicio004/ejercicio004.component';
 import { DetalleComponent } from './components/detalle/detalle.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -15,7 +17,11 @@ const routes: Routes = [
   { path: 'ejercicio003', component: Ejercicio003Component },
   { path: 'ejercicio004', component: Ejercicio004Component },
   { path: '', redirectTo: "/home", pathMatch:"full" },
-  { path: '**', redirectTo: "/home"}
+  { path: '**', redirectTo: "/home"},
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '**', redirectTo: '/login' } // Manejo de rutas no encontradas
 ];
 
 @NgModule({
