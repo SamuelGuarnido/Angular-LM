@@ -1,1 +1,72 @@
+<h1>Usuarios</h1>
 
+<!-- Lista de usuarios -->
+<ul>
+  <li *ngFor="let usuario of usuarios">
+    <span>ID: {{ usuario.id }}</span>
+    <br>
+    <span>Nombre: {{ usuario.nombre }}</span>
+    <br>
+    <span>Email: {{ usuario.email }}</span>
+    <br>
+    <span>Edad: {{ usuario.edad }}</span>
+    <br>
+    <span>Idioma: {{ usuario.idioma }}</span>
+    <br>
+    <button (click)="editarUsuario(usuario)">Editar</button>
+    <button (click)="borrarUsuario(usuario)">Borrar</button>
+    <hr>
+  </li>
+</ul>
+
+<!-- Formulario para crear un nuevo usuario -->
+<form (ngSubmit)="agregarUsuario()">
+  <label>
+    Nombre:
+    <input [(ngModel)]="nuevoUsuario.nombre" name="nombre" required>
+  </label>
+  <br>
+  <label>
+    Email:
+    <input [(ngModel)]="nuevoUsuario.email" name="email" required>
+  </label>
+  <br>
+  <label>
+    Edad:
+    <input [(ngModel)]="nuevoUsuario.edad" name="edad" type="number" required>
+  </label>
+  <br>
+  <label>
+    Idioma:
+    <input [(ngModel)]="nuevoUsuario.idioma" name="idioma" required>
+  </label>
+  <br>
+  <button type="submit">Agregar Usuario</button>
+</form>
+
+<!-- Edición de usuario -->
+<div *ngIf="usuarioEditado">
+  <h2>Editar Usuario</h2>
+  <label>
+    Nombre:
+    <input [(ngModel)]="usuarioEditado.nombre" name="nombre" required>
+  </label>
+  <br>
+  <label>
+    Email:
+    <input [(ngModel)]="usuarioEditado.email" name="email" required>
+  </label>
+  <br>
+  <label>
+    Edad:
+    <input [(ngModel)]="usuarioEditado.edad" name="edad" type="number" required>
+  </label>
+  <br>
+  <label>
+    Idioma:
+    <input [(ngModel)]="usuarioEditado.idioma" name="idioma" required>
+  </label>
+  <br>
+  <button (click)="guardarUsuarioEditado()">Guardar</button>
+  <button (click)="usuarioEditado = null">Cancelar</button>
+</div>
