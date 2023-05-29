@@ -1,6 +1,5 @@
-<p>ejercicio004 works!</p>
 <div class="container mt-2 shadow-lg rounded p-2">
-  <h2>Angular -JSON-SERVER (CRUD)</h2>
+  <h2>Angular - JSON-SERVER (CRUD)</h2>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -13,12 +12,48 @@
     </thead>
     <tbody>
       <tr *ngFor="let fr of frutas">
-        <th>{{fr.id}}</th>
-        <th>{{fr.descripcion}}</th>
-        <th>{{fr.precio}}</th>
-        <th><button (click)="baja(fr)" class="btn btn-danger">Borrar</button></th>
-        <th><button (click)="seleccionar(fr)" class="btn btn-info">Seleccionar</button></th>
+        <td>{{fr.id}}</td>
+        <td>{{fr.descripcion}}</td>
+        <td>{{fr.precio}}</td>
+        <td><button (click)="baja(fr)" class="btn btn-danger">Borrar</button></td>
+        <td><button (click)="seleccionar(fr)" class="btn btn-info">Seleccionar</button></td>
       </tr>
     </tbody>
   </table>
+</div>
+
+<div class="container mt-2 shadow-lg rounded p-2">
+  <h2>Agregar Fruta</h2>
+  <form (submit)="agregarFruta()">
+    <label>
+      Descripción:
+      <input type="text" [(ngModel)]="fruta.descripcion" name="descripcion" required>
+    </label>
+    <label>
+      Precio:
+      <input type="number" [(ngModel)]="fruta.precio" name="precio" required>
+    </label>
+    <button type="submit" class="btn btn-info" style = "margin-left: 10px;">Agregar</button>
+  </form>
+</div>
+
+<div class="container mt-2 shadow-lg rounded p-2">
+  <h2>Modificar Fruta</h2>
+  <form (submit)="modificarFruta()" *ngIf="frutaSeleccionada">
+    <label>
+      Seleccione una fruta:
+      <select [(ngModel)]="frutaSeleccionada" name="frutaSeleccionada">
+        <option *ngFor="let fruta of frutas" [ngValue]="fruta">{{ fruta.descripcion }}</option>
+      </select>
+    </label>
+    <label>
+      Nueva descripción:
+      <input type="text" [(ngModel)]="fruta.descripcion" name="nuevaDescripcion" required>
+    </label>
+    <label>
+      Nuevo precio:
+      <input type="number" [(ngModel)]="fruta.precio" name="nuevoPrecio" required>
+    </label>
+    <button type="submit" class="btn btn-info">Modificar</button>
+  </form>
 </div>
